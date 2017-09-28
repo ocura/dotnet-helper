@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Version>0.0.1</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyVersion>0.0.1.0</AssemblyVersion>
+    <FileVersion>0.0.1.0</FileVersion>
+    <Copyright>Dalton Ocura Copyright 2017</Copyright>
+    <Authors>Dalton Ocura</Authors>
+    <Company>Ocura</Company>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Description>Ocura Helper is a collections of utility classes and extension methods for dotnet. It includes code to help with tasks including functions and utilities to compare, convert, datetime, enum, linq, math, null and string.</Description>
+    <PackageLicenseUrl>https://github.com/ocura/dotnet-helper/blob/master/LICENSE.txt</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/ocura/dotnet-helper</PackageProjectUrl>
+    <PackageIconUrl>https://github.com/ocura/dotnet-helper</PackageIconUrl>
+    <RepositoryUrl>https://github.com/ocura/dotnet-helper</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>This is the first version of the tool, it will be awsome some day.</PackageReleaseNotes>
+    <PackageTags>Helper Convert Compare Linq Math</PackageTags>
+  </PropertyGroup>
+
+</Project>
