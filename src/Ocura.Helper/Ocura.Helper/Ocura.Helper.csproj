@@ -13,7 +13,7 @@
     <Description>Ocura Helper is a collections of utility classes and extension methods for dotnet. It includes code to help with tasks including functions and utilities to compare, convert, datetime, enum, linq, math, null and string.</Description>
     <PackageLicenseUrl>https://github.com/ocura/dotnet-helper/blob/master/LICENSE.txt</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/ocura/dotnet-helper</PackageProjectUrl>
-    <PackageIconUrl>https://github.com/ocura/dotnet-helper/blob/master/assets/generated/icon.svg</PackageIconUrl>
+    <PackageIconUrl>https://github.com/ocura/dotnet-helper/blob/master/assets/generated/ocura-helper.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/ocura/dotnet-helper</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>Move from .Net Core to .Net Standard</PackageReleaseNotes>
