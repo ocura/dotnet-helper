@@ -60,7 +60,7 @@ namespace Ocura.Helper
     }
 
     /// <summary>
-    /// To title case.
+    ///   To title case.
     /// </summary>
     /// <param name="text">The text.</param>
     /// <returns></returns>
@@ -71,7 +71,7 @@ namespace Ocura.Helper
     }
 
     /// <summary>
-    /// Pluralizes the specified count.
+    ///   Pluralizes the specified count.
     /// </summary>
     /// <param name="text">The text.</param>
     /// <param name="count">The count.</param>
@@ -81,6 +81,17 @@ namespace Ocura.Helper
     {
       if (count < 2) return text;
       return string.IsNullOrEmpty(plural) ? text + "s" : plural;
+    }
+
+    /// <summary>
+    ///   Adds a value before the string.
+    /// </summary>
+    /// <param name="text">The text.</param>
+    /// <param name="value">The value to be added.</param>
+    /// <returns></returns>
+    public static string AddBefore(this string text, string value)
+    {
+      return text != null ? value + text : "";
     }
   }
 }

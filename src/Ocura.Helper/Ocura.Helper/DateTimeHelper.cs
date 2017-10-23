@@ -14,6 +14,14 @@ namespace Ocura.Helper
     public static int LastWeek => GetLastWeek();
 
     /// <summary>
+    ///   Gets the begin of year.
+    /// </summary>
+    /// <value>
+    ///   The begin of year.
+    /// </value>
+    public static DateTime BeginOfYear => GetBeginOfYear();
+
+    /// <summary>
     ///   Adds the business days.
     /// </summary>
     /// <param name="date">The date.</param>
@@ -162,6 +170,15 @@ namespace Ocura.Helper
     private static int GetLastWeek()
     {
       return DateTime.Today.AddDays(-7).WeekOfYear();
+    }
+
+    /// <summary>
+    ///   Gets the begin of year.
+    /// </summary>
+    /// <returns></returns>
+    private static DateTime GetBeginOfYear()
+    {
+      return new DateTime(DateTime.Today.Year, 1, 1);
     }
   }
 }
