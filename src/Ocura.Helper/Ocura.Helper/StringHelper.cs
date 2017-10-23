@@ -26,11 +26,21 @@ namespace Ocura.Helper
     }
 
     /// <summary>
-    ///   Normalizes and clean.
+    ///   Remove diacritics and set to upper
     /// </summary>
     /// <param name="text">The text.</param>
     /// <returns></returns>
-    public static string NormalizeAndClean(this string text)
+    public static string ToUpperNormalize(this string text)
+    {
+      return text?.ToUpper().Trim().RemoveDiacritics();
+    }
+
+    /// <summary>
+    ///   Remove diacritics and set to lower
+    /// </summary>
+    /// <param name="text">The text.</param>
+    /// <returns></returns>
+    public static string ToLowerNormalize(this string text)
     {
       return text?.ToLower().Trim().RemoveDiacritics();
     }
@@ -40,10 +50,37 @@ namespace Ocura.Helper
     /// </summary>
     /// <param name="text">The text.</param>
     /// <param name="searchValue">The search value.</param>
+    /// <param name="normalize">if set to <c>true</c> [normalize string].</param>
     /// <returns></returns>
-    public static bool LikeNormalize(this string text, string searchValue)
+    public static bool Like(this string text, string searchValue, bool normalize = true)
     {
-      return text?.NormalizeAndClean().Contains(searchValue?.NormalizeAndClean() ?? "") ?? false;
+      return normalize
+        ? (text?.ToUpperNormalize().Contains(searchValue?.ToUpperNormalize() ?? "") ?? false)
+        : (text?.Contains(searchValue ?? "") ?? false);
+    }
+
+    /// <summary>
+    /// To title case.
+    /// </summary>
+    /// <param name="text">The text.</param>
+    /// <returns></returns>
+    public static string ToTitleCase(this string text)
+    {
+      var textInfo = new CultureInfo("en-US", true).TextInfo;
+      return textInfo.ToTitleCase(text);
+    }
+
+    /// <summary>
+    /// Pluralizes the specified count.
+    /// </summary>
+    /// <param name="text">The text.</param>
+    /// <param name="count">The count.</param>
+    /// <param name="plural">The plural.</param>
+    /// <returns></returns>
+    public static string Pluralize(this string text, int count, string plural = null)
+    {
+      if (count < 2) return text;
+      return string.IsNullOrEmpty(plural) ? text + "s" : plural;
     }
   }
 }
