@@ -130,7 +130,7 @@ namespace Ocura.Helper
     /// <returns></returns>
     public static DateTime BeginOfMonth(this DateTime date)
     {
-      return new DateTime(date.Year, date.Month, 1);
+      return new DateTime(date.Year, date.Month, 1, 0, 0, 0);
     }
 
     /// <summary>
@@ -150,7 +150,7 @@ namespace Ocura.Helper
     /// <returns></returns>
     public static DateTime EndOfMonth(this DateTime date)
     {
-      return new DateTime(date.Year, date.Month, DateTime.DaysInMonth(date.Year, date.Month));
+      return new DateTime(date.Year, date.Month, DateTime.DaysInMonth(date.Year, date.Month), 23, 59, 59);
     }
 
     /// <summary>

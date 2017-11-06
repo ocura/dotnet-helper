@@ -1,7 +1,11 @@
 using System;
+using System.Drawing;
 
 namespace Ocura.Helper
 {
+  /// <summary>
+  /// Math Helper
+  /// </summary>
   public static class MathHelper
   {
     /// <summary>
@@ -46,6 +50,45 @@ namespace Ocura.Helper
     public static decimal Share(decimal partialValue, decimal totalValue)
     {
       return totalValue == 0 ? 0 : partialValue / totalValue;
+    }
+
+    /// <summary>
+    ///   Converts the color of to heat.
+    /// </summary>
+    /// <param name="value">The value.</param>
+    /// <param name="low">The low.</param>
+    /// <param name="high">The high.</param>
+    /// <returns></returns>
+    public static string ConvertToHeatColor(this long value, long low, long high)
+    {
+      decimal range = high - low;
+      var alpha = range == 0 ? 0 : (value / range * 255).RoundUp();
+      var color = Color.FromArgb(alpha, 255, 165, 0);
+      return color.ToRGBString();
+    }
+
+    /// <summary>
+    ///   Converts the color of to heat.
+    /// </summary>
+    /// <param name="value">The value.</param>
+    /// <param name="low">The low.</param>
+    /// <param name="high">The high.</param>
+    /// <returns></returns>
+    public static string ConvertToHeatColor(this int value, long low, long high)
+    {
+      return ConvertToHeatColor((long) value, low, high);
+    }
+
+    /// <summary>
+    ///   Converts the color of to heat.
+    /// </summary>
+    /// <param name="value">The value.</param>
+    /// <param name="low">The low.</param>
+    /// <param name="high">The high.</param>
+    /// <returns></returns>
+    public static string ConvertToHeatColor(this short value, long low, long high)
+    {
+      return ConvertToHeatColor((long) value, low, high);
     }
   }
 }
